@@ -1,11 +1,11 @@
-import { Grid, Box, Button } from '@material-ui/core';
+import { Grid, Box, Button, Avatar } from '@material-ui/core';
 import MailIcon from '@material-ui/icons/Mail';
 import PhoneIcon from '@material-ui/icons/Phone';
 
 export const Paciente = (props) =>{
   return(
     <>
-      <img alt="avatar_usuario" src={props.imagen}></img>
+      <Avatar style={{height:"300px", width:"300px", marginTop:"1%", marginBottom:"2%"}} alt="avatar_usuario" src={props.imagen}></Avatar>
       <Grid style={{marginLeft:"4%"}}>
         <h1>{props.nombre}</h1>
         <Box display="flex" flexDirection="row" justifyContent="center">
@@ -17,7 +17,7 @@ export const Paciente = (props) =>{
           <p style={{paddingLeft:"2%"}}>{props.tel}</p>
         </Box>
         <p></p>
-        <Button onClick={props.cambiarPaciente} variant="contained" color="primary">
+        <Button onClick={props.cambiarPaciente} variant="contained">
          Cambiar
         </Button>
       </Grid>
