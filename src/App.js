@@ -1,7 +1,9 @@
 
-import {Button, Paper} from '@material-ui/core';
+import {Button, Paper, Box} from '@material-ui/core';
+import PersonIcon from '@material-ui/icons/Person';
 import axios from 'axios';
 import { useState, useEffect } from "react";
+import { Paciente } from "./components/Paciente";
 import './App.css';
 
 function App() {
@@ -36,20 +38,25 @@ function App() {
   },[])
 
   return (
+  <Paper elevation={3} style={{ maxHeight: "1400px", maxWidth: "1200px", margin: "auto" }}>
     <div className="App">
-      <Paper elevation={3}>
-      <div>
-        <h1>{usuario.nombre}</h1>
-        <p>{usuario.email}</p>
-        <p>{usuario.phone}</p>
-        <img alt="avatar_usuario" src={usuario.image}></img>
-        <hr/>
-      </div>
+      <Box display="flex" flexDirection="row" justifyContent="center">
+        <PersonIcon style={{paddingTop:"1%"}}></PersonIcon>
+        <p style={{fontWeight:"bold", paddingLeft:"1%"}}>PERFIL PACIENTE</p>
+      </Box>
+      <hr></hr>
+      <Paciente 
+        nombre={usuario.nombre}
+        email={usuario.email}
+        tel={usuario.phone}
+        imagen={usuario.image}
+      />
+      <hr/>
       <Button onClick={handleOnClick} variant="contained" color="primary">
-          cambiar
-      </Button>
-      </Paper>
+       Cambiar
+     </Button>
     </div>
+  </Paper>
   );
 }
 
