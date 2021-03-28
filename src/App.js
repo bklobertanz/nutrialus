@@ -41,20 +41,22 @@ function App() {
   <Paper elevation={3} style={{ maxHeight: "1400px", maxWidth: "1200px", margin: "auto" }}>
     <div className="App">
       <Box display="flex" flexDirection="row" justifyContent="center">
-        <PersonIcon style={{paddingTop:"1%"}}></PersonIcon>
-        <p style={{fontWeight:"bold", paddingLeft:"1%"}}>PERFIL PACIENTE</p>
+        <PersonIcon style={{marginTop:"1.5%"}}></PersonIcon>
+        <p style={{fontWeight:"bold", paddingLeft:"1%", marginBottom: "0.5%"}}>PERFIL PACIENTE</p>
       </Box>
       <hr></hr>
-      <Paciente 
-        nombre={usuario.nombre}
-        email={usuario.email}
-        tel={usuario.phone}
-        imagen={usuario.image}
-      />
-      <hr/>
-      <Button onClick={handleOnClick} variant="contained" color="primary">
-       Cambiar
-     </Button>
+      <Box
+      display="flex" flexDirection="row" justifyContent="center"
+      >
+        <Paciente 
+          nombre={usuario.nombre}
+          email={usuario.email}
+          tel={usuario.phone}
+          imagen={usuario.image}
+          cambiarPaciente={handleOnClick}
+        />
+      </Box>
+      
     </div>
   </Paper>
   );
